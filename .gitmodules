@@ -1,0 +1,3 @@
+[submodule "EIPScanner"]
+	path = EIPScanner
+	url = git@github.com:ipa-mdh/EIPScanner.git
