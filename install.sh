@@ -8,6 +8,10 @@ PROJECT_FOLDER="EIPScanner"
 mkdir -p "${SCRIPT_DIR}/build"
 cd "${SCRIPT_DIR}/build"
 
+git submodule update --init --recursive
+
 cmake "${SCRIPT_DIR}/${PROJECT_FOLDER}"
 cmake --build . --target install
 make install
+
+cd -
