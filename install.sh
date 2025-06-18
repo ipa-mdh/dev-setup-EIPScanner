@@ -14,4 +14,7 @@ cmake "${SCRIPT_DIR}/${PROJECT_FOLDER}"
 cmake --build . --target install
 make install
 
+# Update the System Library Cache
+ldconfig
+
 cd -
