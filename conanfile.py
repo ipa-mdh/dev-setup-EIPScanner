@@ -29,10 +29,6 @@ class EipScannerRecipe(ConanFile):
     def layout(self):
         cmake_layout(self)
 
-    def source(self):
-        self.output.info("Updating git submodules recursively...")
-        subprocess.run(["git", "submodule", "update", "--init", "--recursive"], check=True)
-
     def generate(self):
         deps = CMakeDeps(self)
         deps.generate()
