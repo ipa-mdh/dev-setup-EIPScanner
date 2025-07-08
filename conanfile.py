@@ -25,7 +25,7 @@ class EipScannerRecipe(ConanFile):
     def config_options(self):
         if self.settings.os == "Windows":
             del self.options.fPIC
-
+ 
     def layout(self):
         cmake_layout(self)
 
@@ -47,6 +47,8 @@ class EipScannerRecipe(ConanFile):
         cmake.install()
 
     def package_info(self):
+        self.cpp_info.set_property("cmake_target_name", "EIPScanner")
+        self.cpp_info.set_property("cmake_file_name", "EIPScanner")
         self.cpp_info.libs = ["EIPScanner"]
 
     def requirements(self):
