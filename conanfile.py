@@ -4,7 +4,7 @@ import subprocess
 
 
 class EipScannerRecipe(ConanFile):
-    name = "dev-setup-eipscanner"
+    name = "eipscanner"
     version = "1.0"
 
     # Optional metadata
@@ -47,7 +47,7 @@ class EipScannerRecipe(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.libs = ["hello"]
+        self.cpp_info.libs = ["EIPScanner"]
 
     def requirements(self):
         self.requires("gtest/1.14.0")
