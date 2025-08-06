@@ -17,7 +17,7 @@ class EipScannerRecipe(ConanFile):
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
+    default_options = {"shared": True, "fPIC": True}
 
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "EIPScanner/CMakeLists.txt", "EIPScanner/src/*", "EIPScanner/include/*", "EIPScanner/EIPScanner.pc.in"
@@ -50,6 +50,7 @@ class EipScannerRecipe(ConanFile):
         self.cpp_info.set_property("cmake_target_name", "EIPScanner")
         self.cpp_info.set_property("cmake_file_name", "EIPScanner")
         self.cpp_info.libs = ["EIPScanner"]
+        self.cpp_info.libdirs = ["lib"]
 
     def requirements(self):
         self.requires("gtest/1.14.0")
