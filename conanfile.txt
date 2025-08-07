@@ -1,0 +1,8 @@
+[requires]
+eipscanner/1.0
+
+[generators]
+CMakeDeps
+CMakeToolchain
+VirtualRunEnv
+ROSEnv
